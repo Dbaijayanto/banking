@@ -1,4 +1,5 @@
-import HeaderBox from '@/components/HeaderBox'
+
+import HeaderBox from '@/components/ui/HeaderBox'
 import TotalBalanceBox from '@/components/ui/TotalBalanceBox'
 
 
@@ -11,7 +12,7 @@ const Home = (props: Props) => {
     <section className="home">
       <div className="home-content">
         <header className="home-header">
-          <HeaderBox 
+          <HeaderBox
             type="greeting"
             title="Welcome"
             user={loggedIn?.firstName || 'Guest'}
