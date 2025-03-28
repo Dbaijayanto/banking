@@ -1,12 +1,16 @@
 
 import HeaderBox from '@/components/ui/HeaderBox'
+import RightSideBar from '@/components/ui/RightSideBar'
+import RightSideBr from '@/components/ui/RightSideBar'
 import TotalBalanceBox from '@/components/ui/TotalBalanceBox'
 
 
 type Props = {}
 
 const Home = (props: Props) => {
-  const loggedIn = { firstName: 'user'}
+  const loggedIn = { firstName: 'user', lastName:'account',
+    email: 'contact@jsmastery.pro'
+  }
 
   return (
     <section className="home">
@@ -28,7 +32,15 @@ const Home = (props: Props) => {
           
           />
         </header>
+
+        RECENT TRANSACTIONS
       </div>
+
+      <RightSideBar 
+        user={loggedIn}
+        transactions={[]}
+        banks={[{currentBalance:123.50},{currentBalance:500.75}]}
+      />
     </section>
   )
 }
