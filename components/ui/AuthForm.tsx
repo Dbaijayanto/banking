@@ -22,13 +22,14 @@ import CustomInput from './CustomInput'
 import { authFromSchema } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { signIn, signUp } from '@/lib/actions/user.action';
+import { getLoggedInUser, signIn, signUp } from '@/lib/actions/user.action';
 
 
 const AuthForm = ({ type }: { type: string }) => {
   const router = useRouter();
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  
 
   const formSchema = authFromSchema(type);
 
@@ -53,7 +54,7 @@ const AuthForm = ({ type }: { type: string }) => {
          const newUser = await signUp(data);
 
             setUser(newUser);
-        }
+        } 
 
         if(type === 'sign-in') {
             const response = await signIn({

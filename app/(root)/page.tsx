@@ -3,14 +3,15 @@ import HeaderBox from '@/components/ui/HeaderBox'
 import RightSideBar from '@/components/ui/RightSideBar'
 import RightSideBr from '@/components/ui/RightSideBar'
 import TotalBalanceBox from '@/components/ui/TotalBalanceBox'
+import { getLoggedInUser } from '@/lib/actions/user.action'
 
 
 type Props = {}
 
-const Home = (props: Props) => {
-  const loggedIn = { firstName: 'user', lastName:'account',
-    email: 'contact@jsmastery.pro'
-  }
+const Home =  () => {
+  const loggedIn = {firstName:'USER',lastName:'',
+    email:'contact@gmail.com'};
+
 
   return (
     <section className="home">
@@ -20,12 +21,11 @@ const Home = (props: Props) => {
             type="greeting"
             title="Welcome"
             user={loggedIn?.firstName || 'Guest'}
-            subtext = "Access and manage your account 
-            and transaction efficiently"
+            subtext = "Access and manage your account and transaction efficiently"
           />
 
           <TotalBalanceBox
-            accouts={[]}
+            accounts={[]}
               totalBanks={1}
               totalCurrentBalance={1250.35}
             

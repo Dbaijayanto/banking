@@ -12,12 +12,13 @@ const RightSideBar = ({ user, transactions,
         <div className="profile-banner" />
         <div className="profile">
           <div className="profile-img">
-            <span className="text-5xl font-bold text-blue-500">{user.firstName[0]}</span>
+          <span className="text-5xl font-bold 
+          text-blue-500">{user.firstName[0]}</span>
           </div>
 
           <div className="profile-details">
             <h1 className='profile-name'>
-              {user.firstName} {user.lastName}
+              {user.firstName}
             </h1>
             <p className="profile-email">
               {user.email}
